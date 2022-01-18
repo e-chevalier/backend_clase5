@@ -20,7 +20,10 @@ app.engine('cte', function (filePath, options, callback) {
             .replace('^^titulo$$', '' + options.titulo + '')
             .replace('^^mensaje$$', '' + options.mensaje + '')
             .replace('^^autor$$', '' + options.autor + '')
-            .replace('^^version$$', '' + options.version + '');
+            .replace('^^version$$', '' + options.version + '')
+            .replace('^^nombre$$', '' + options.nombre + '')
+            .replace('^^apellido$$', '' + options.apellido + '')
+            .replace('^^fecha$$', '' + options.fecha + '');
         return callback(null, rendered);
     });
 });
@@ -49,7 +52,7 @@ app.get('/cte1', function (req, res) {
 });
 
 app.get('/cte2', function (req, res) {
-    res.render('plantilla2', obj);
+    res.render('plantilla2', {nombre: "Esteban", apellido: 'Chevalier', fecha: new Date().toLocaleString()});
 });
 
 
