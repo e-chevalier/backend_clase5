@@ -30,7 +30,7 @@ app.get('/datos', (req, res) => {
     res.render('meter.pug', params)
 })
 
-
+// TEST: http://localhost:8080/datos?min=10&nivel=15&max=20&titulo=%3Ci%3EMedidor%3C/i%3E
 
 
 

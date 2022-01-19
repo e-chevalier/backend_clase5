@@ -9,6 +9,8 @@ const PORT = 8080
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
+app.use(express.static('node_modules/bootstrap/dist'))
+
 
 app.set('views', './views'); // especifica el directorio de vistas
 app.set('view engine', 'ejs'); // registra el motor de plantillas
@@ -20,14 +22,20 @@ const server = app.listen(PORT, () => {
 
 server.on("error", error => console.log(`Error en servidor ${error}`))
 
+//{name: 'Pedro', surname: 'Lopez', age: 23 }
+const fakeApi = [{name: 'Pedro', surname: 'Lopez', age: 23 }, 
+                 {name: 'Luis', surname: 'Guzman', age: 33 }]
 
-app.get('/datos', (req, res) => {
-    let params = req.query
-    console.log(params)
-    res.render('index', params)
+app.get('/', (req, res) => { 
+    console.log(fakeApi.length) 
+    res.render('page/form', {data: fakeApi})
 })
 
-// TEST : http://localhost:8080/datos?min=10&nivel=15&max=20&titulo=%3Ci%3EMedidor%3C/i%3E
+app.post('/personas', (req, res) => {
+    console.log(req.body)
+    fakeApi.push(req.body)
+    res.render('page/form', {data: fakeApi})
+})
 
 
 
