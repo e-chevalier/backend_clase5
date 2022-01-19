@@ -27,7 +27,11 @@ const fakeApi = () => [
     { nombre: 'Benjamin', apellido: 'Barg', edad: 10, email: 'bbarg123@gmail.com', telefono: '351212355'}
 ]
 
-
+app.get('/datos', (req, res) => {
+    let params = req.query
+    console.log(params)
+    res.render('index', params)
+})
 
 
 
