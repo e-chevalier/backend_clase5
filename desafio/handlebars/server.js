@@ -7,13 +7,10 @@ import { engine } from 'express-handlebars';
 const __dirname = path.resolve();
 
 const app = express()
-const router = express.Router()
-
 const PORT = 8080
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use('/api/productos', router)
 app.use(express.static('node_modules/bootstrap/dist'))
 
 // defino el motor de plantilla
@@ -42,19 +39,6 @@ const productos = await contenedor.getAll()
 
 const fakeApi = () => productos
 
-/* [
-  {
-    "title": "miprod_1",
-    "price": 124.5,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
-    "id": 1
-  }
-] */
-
-Handlebars.registerHelper('addOne', function (value) {
-    return Number(value) + 1
-})
-
 
 app.get('/productos', (req, res) => {
     res.render('main', {productos: fakeApi(), isEmpty: fakeApi().length? false:true})
@@ -62,7 +46,6 @@ app.get('/productos', (req, res) => {
 
 app.post('/productos', (req, res) => {
     let prod = req.body
-    console.log(prod)
     if ( Object.keys(prod).length !== 0 && prod.title !== '' && prod.price !== '' && prod.thumbnail !== '') {
         const max = productos.reduce((a,b) => a.id > b.id ? a:b, {id: 0} )
         prod.id = max.id + 1

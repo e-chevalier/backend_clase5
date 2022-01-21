@@ -1,50 +1,62 @@
 [
   {
-    "title": "miprod_1",
+    "title": "Cereza",
     "price": 124.5,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_cerejas-128.png",
     "id": 1
   },
   {
-    "title": "UpdateNameProd2",
+    "title": "Manzana",
     "price": 125,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_maca-128.png",
     "id": "2"
   },
   {
-    "title": "miprod_4",
+    "title": "Banana",
     "price": 714.5,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_banana-128.png",
     "id": 4
   },
   {
-    "title": "miprod_3",
+    "title": "Frutilla",
     "price": 14.5,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_morango-128.png",
     "id": 3
   },
   {
-    "title": "miprod_lala",
+    "title": "Uvas",
     "price": 124.5,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_uvas-128.png",
     "id": 5
   },
   {
-    "title": "miprod_lala2",
+    "title": "Palta",
     "price": 124.5,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_abacate-128.png",
     "id": 6
   },
   {
-    "title": "WIIWIW",
+    "title": "Pera",
     "price": 124.5,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_pera-128.png",
     "id": 7
   },
   {
-    "title": "MIPRODUCTO",
-    "price": "500",
-    "thumbnail": "http://google.com.ar",
+    "title": "Limon",
+    "price": "80.05",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_limao-128.png",
     "id": 8
+  },
+  {
+    "title": "Sandia",
+    "price": "600",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_melancia-128.png",
+    "id": 9
+  },
+  {
+    "title": "Coco",
+    "price": "700",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_coco-128.png",
+    "id": 10
   }
 ]

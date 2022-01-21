@@ -1,6 +1,5 @@
 import express from 'express';
-import path from 'path';
-const __dirname = path.resolve();
+import { Contenedor } from './Contenedor.js'
 
 const app = express()
 
@@ -8,7 +7,6 @@ const PORT = 8080
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(express.static('public'))
 app.use(express.static('node_modules/bootstrap/dist'))
 
 
@@ -22,19 +20,26 @@ const server = app.listen(PORT, () => {
 
 server.on("error", error => console.log(`Error en servidor ${error}`))
 
-//{name: 'Pedro', surname: 'Lopez', age: 23 }
-const fakeApi = [{name: 'Pedro', surname: 'Lopez', age: 23 }, 
-                 {name: 'Luis', surname: 'Guzman', age: 33 }]
 
-app.get('/', (req, res) => { 
-    console.log(fakeApi.length) 
-    res.render('page/form', {data: fakeApi})
+const contenedor = new Contenedor('productos.txt')
+const productos = await contenedor.getAll()
+//productos.length = 0
+
+const fakeApi = () => productos
+
+app.get('/productos', (req, res) => { 
+    res.render('page/productList', {productos: fakeApi(), isEmpty: fakeApi().length? false:true})
 })
 
-app.post('/personas', (req, res) => {
-    console.log(req.body)
-    fakeApi.push(req.body)
-    res.render('page/form', {data: fakeApi})
+app.post('/productos', (req, res) => {
+    let prod = req.body
+    if ( Object.keys(prod).length !== 0 && prod.title !== '' && prod.price !== '' && prod.thumbnail !== '') {
+        const max = productos.reduce((a,b) => a.id > b.id ? a:b, {id: 0} )
+        prod.id = max.id + 1
+        productos.push(prod)
+        contenedor.save(prod) 
+    }
+    res.render('page/form')
 })
 
 
